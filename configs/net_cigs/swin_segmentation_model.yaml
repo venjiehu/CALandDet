@@ -1,0 +1,24 @@
+backbone:
+  patch_size: [ 4, 4 ]
+  embed_dim: 96
+  depths: [ 2, 2, 6, 2 ]
+  num_heads: [ 3, 6, 12, 24 ]
+  window_size: [ 7, 7 ]
+  dropout: 0.
+  attention_dropout: 0.
+  stochastic_depth_prob: 0.2
+
+
+neck:
+  in_dims: [ 768, 1152,576,288 ]
+  out_dims: [ 384, 192, 96, 48 ]
+  num_heads: [ 24, 12, 6, 3 ]
+  depths: [ 2, 2, 6, 2 ]
+  window_size: [ 7, 7 ]
+  dropout: 0.
+  attention_dropout: 0.
+  sd_prob: 0.2
+
+head:
+  in_dims: [ 192, 96, 48 ]  # (head1_dims, head2_dims, head3_dims)
+  drop_ratio: [ 0., 0., 0. ] # (head1_drop, head2_drop, head3_drop)

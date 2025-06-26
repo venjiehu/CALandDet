@@ -1,0 +1,29 @@
+train:
+  train_datasets:
+  val_datasets:
+
+  img_size: [ 224, 224 ]
+  batch_size: 32
+  num_workers: 4
+  lr: 1.0e-3 # base lr train: 1e-3
+
+  epochs: 20 # 200
+  warmup_epochs: 2 # 预热周期 20
+
+  optimizer_method: weight_decay # layer_decay or weight_decay
+  layer_decay_dict:
+    layer_decay_rate: 0.75
+    weight_decay: 0.05
+    no_weight_decay_list:
+
+  weight_decay_dict:
+    weight_decay: 0.05
+    no_weight_decay_list:
+
+
+model:
+  name: calanddet_model
+  train_times: 0t
+  # load  model configs
+  cigs_file: ./configs/net_cigs/swin_segmentation_model.yaml
+  start_weights:
